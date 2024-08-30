@@ -1,13 +1,15 @@
 Problem 1: 
 
 a) Navigate and List:
-   Start by navigating to your home directory and list its contents. Then, move into a 
-  directory named "LinuxAssignment" if it exists; otherwise, create it.
+Start by navigating to your home directory and list its contents.
 
 cdac@LAPTOP-NGDA72MJ:~$ pwd
 /home/cdac
 cdac@LAPTOP-NGDA72MJ:~$ ls
 File.txt  Tutorial  abc.txt  xyz.txt
+
+Then, move into a directory named "LinuxAssignment" if it exists; otherwise, create it.
+
 cdac@LAPTOP-NGDA72MJ:~$ ls | grep LinuxAssignment
 cdac@LAPTOP-NGDA72MJ:~$ mkdir LinuxAssignment
 cdac@LAPTOP-NGDA72MJ:~$ ls
@@ -34,21 +36,23 @@ docs  file1.txt
 
 
 d) Copy and Move Files:
-   Copy the "file1.txt" file into the "docs" directory and rename it to "file2.txt".
+Copy the "file1.txt" file into the "docs" directory.
 
 cdac@LAPTOP-NGDA72MJ:~/LinuxAssignment$ cp file1.txt docs
 cdac@LAPTOP-NGDA72MJ:~/LinuxAssignment$ cd docs
 cdac@LAPTOP-NGDA72MJ:~/LinuxAssignment/docs$ ls
 file1.txt
+
+Rename it to "file2.txt".
+
 cdac@LAPTOP-NGDA72MJ:~/LinuxAssignment/docs$ mv file1.txt file2.txt
 cdac@LAPTOP-NGDA72MJ:~/LinuxAssignment/docs$ ls
 file2.txt
 
 
 e) Permissions and Ownership:
-   Change the permissions of "file2.txt" to allow read, write, and execute permissions for 
-the owner and only read permissions for others. Then, change the owner of "file2.txt" to 
-the current user. 
+Change the permissions of "file2.txt" to allow read, write, and execute permissions for 
+the owner and only read permissions for others. 
 
 cdac@LAPTOP-NGDA72MJ:~/LinuxAssignment/docs$ chmod u+r+w+x file2.txt
 cdac@LAPTOP-NGDA72MJ:~/LinuxAssignment/docs$ ls -l
@@ -58,6 +62,9 @@ cdac@LAPTOP-NGDA72MJ:~/LinuxAssignment/docs$ chmod o-w-x file2.txt
 cdac@LAPTOP-NGDA72MJ:~/LinuxAssignment/docs$ ls -l
 total 0
 -rwxr--r-- 1 cdac cdac 6 Aug 30 16:51 file2.txt
+
+Change the owner of "file2.txt" to the current user. 
+
 cdac@LAPTOP-NGDA72MJ:~/LinuxAssignment/docs$ sudo chown $(whoami) file2.txt
 cdac@LAPTOP-NGDA72MJ:~/LinuxAssignment/docs$ pwd
 /home/cdac/LinuxAssignment/docs
@@ -81,21 +88,24 @@ bin  boot  dev  etc  home  init  lib  lib32  lib64  libx32  media  mnt  opt  pro
 g) File Searching:
 a. Search for all files with the extension ".txt" in the current directory and its subdirectories. 
 
-cdac@LAPTOP-NGDA72MJ:~$ ls | grep ".txt"
-File.txt
-abc.txt
-xyz.txt
-cdac@LAPTOP-NGDA72MJ:~$ ls -l | grep ".txt"
--rw-r--r-- 1 cdac cdac   12 Aug 30 16:07 File.txt
--rw-r--r-- 1 cdac cdac    0 Aug 30 16:03 abc.txt
--rw-r--r-- 1 cdac cdac    8 Aug 30 16:04 xyz.txt
-cdac@LAPTOP-NGDA72MJ:~$ ls -asl | grep ".txt"
-0 -rw-r--r-- 1 cdac cdac   12 Aug 30 16:07 File.txt
-0 -rw-r--r-- 1 cdac cdac    0 Aug 30 16:03 abc.txt
-0 -rw-r--r-- 1 cdac cdac    8 Aug 30 16:04 xyz.txt
+cdac@LAPTOP-NGDA72MJ:~/LinuxAssignment$ find . -name "*.txt"
+./data.txt
+./docs/file2.txt
+./duplicate.txt
+./file1.txt
+./fruit.txt
+./input.txt
+./New_docs/docs/file2.txt
+./numbers.txt
+./output.txt
 
 b. Display lines containing a specific word in a file (provide a file name and the specific 
 word to search). 
+
+cdac@LAPTOP-NGDA72MJ:~/LinuxAssignment$ grep peaches fruit.txt
+peaches
+peaches
+peaches
 
 
 h)System Information:
