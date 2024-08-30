@@ -10,3 +10,12 @@ permissions to group and others. - true
 7. mkdir -p directory1/directory2 creates nested directories, creating directory2 inside directory1 
 if directory1 does not exist. - true
 8. rm -rf file.txt deletes a file forcefully without confirmation. - true
+
+
+Identify the Incorrect Commands: 
+
+1. chmodx is used to change file permissions. -   chmod
+2. cpy is used to copy files and directories. -  cp
+3. mkfile is used to create a new file. - mkdir
+4. catx is used to concatenate files. - cat
+5. rn is used to rename files. - rm
