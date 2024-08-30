@@ -1,1 +1,64 @@
+What will the following commands do? 
+• echo "Hello, World!" 
+It prints string
+o/p  - Hello, World!
 
+• name="Productive" 
+Assign value 'Productive' to name variable.
+
+• touch file.txt
+It creats a new file named file.txt
+
+• ls -a 
+It list all the files and directories.
+
+• rm file.txt
+It remove/Delete the file.txt
+
+• cp file1.txt file2.txt 
+ It copies file1.txt  to file2.txt
+
+• mv file.txt /path/to/directory/
+It move the file.txt to the another directory.
+
+• chmod 755 script.sh 
+Allows owner full permission for read, write and execute.
+
+• grep "pattern" file.txt 
+searches for the 'pattern' in file.txt
+
+• kill PID
+use to kill the process with specific PID.
+
+• mkdir mydir && cd mydir && touch file.txt && echo "Hello, World!" > file.txt && cat file.txt
+It Creates new directory 'mydir'. In mydir it creates file.txt and  writes "Hello, World!" to it then display.
+
+• ls -l | grep ".txt" 
+ sshows all .txt files in the current directory with detailed information.
+
+• cat file1.txt file2.txt | sort | uniq
+It Concatenates file1.txt and file2.txt, then it sorts the lines, and removes duplicates.
+
+• ls -l | grep "^d" 
+It shows all directories in the current directory with detailed.
+
+• grep -r "pattern" /path/to/directory/
+Recursively searches for "pattern" in all files within the specified directory.
+
+• cat file1.txt file2.txt | sort | uniq –d
+It concatiante file1.txt and file2.txt. after sorting it displays duplicate
+
+• chmod 644 file.txt
+Allows owner a read, write permission and other read only.
+
+• cp -r source_directory destination_directory 
+It copies directories from soure_directory to destination_directory Recursively.
+
+• find /path/to/search -name "*.txt"
+It search all '.txt' extension file within specified paths.
+
+• chmod u+x file.txt 
+it gives excute permission for the owner on file.txt
+
+• echo $PATH
+Shows the value of PATH Variable
