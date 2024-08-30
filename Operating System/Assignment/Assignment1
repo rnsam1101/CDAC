@@ -67,6 +67,7 @@ file2.txt
 f) Final Checklist:
    Finally, list the contents of the "LinuxAssignment" directory and the root directory to 
 ensure that all operations were performed correctly. 
+
 cdac@LAPTOP-NGDA72MJ:~/LinuxAssignment/docs$ cd -
 /home/cdac/LinuxAssignment
 cdac@LAPTOP-NGDA72MJ:~/LinuxAssignment$ ls -l
@@ -76,15 +77,45 @@ drwxr-xr-x 1 cdac cdac 4096 Aug 30 16:52 docs
 cdac@LAPTOP-NGDA72MJ:~/LinuxAssignment$ cd /
 cdac@LAPTOP-NGDA72MJ:/$ ls
 bin  boot  dev  etc  home  init  lib  lib32  lib64  libx32  media  mnt  opt  proc  root  run  sbin  snap  srv  sys  tmp  usr  var
-g) File Searching:
+
+  File Searching:
 a. Search for all files with the extension ".txt" in the current directory and its subdirectories. 
+
+cdac@LAPTOP-NGDA72MJ:~$ ls | grep ".txt"
+File.txt
+abc.txt
+xyz.txt
+cdac@LAPTOP-NGDA72MJ:~$ ls -l | grep ".txt"
+-rw-r--r-- 1 cdac cdac   12 Aug 30 16:07 File.txt
+-rw-r--r-- 1 cdac cdac    0 Aug 30 16:03 abc.txt
+-rw-r--r-- 1 cdac cdac    8 Aug 30 16:04 xyz.txt
+cdac@LAPTOP-NGDA72MJ:~$ ls -asl | grep ".txt"
+0 -rw-r--r-- 1 cdac cdac   12 Aug 30 16:07 File.txt
+0 -rw-r--r-- 1 cdac cdac    0 Aug 30 16:03 abc.txt
+0 -rw-r--r-- 1 cdac cdac    8 Aug 30 16:04 xyz.txt
+
 b. Display lines containing a specific word in a file (provide a file name and the specific 
 word to search). 
-h) System Information:
-a. Display the current system date and time. 
+
+
+h)System Information:
+  Display the current system date and time.
+
+cdac@LAPTOP-NGDA72MJ:~$ date
+Fri Aug 30 19:38:14 IST 2024
+
+
 i) Networking:
 a. Display the IP address of the system. 
-b. Ping a remote server to check connectivity (provide a remote server address to ping). 
+
+b. Ping a remote server to check connectivity (provide a remote server address to ping).
+ cdac@LAPTOP-NGDA72MJ:~$ ping 1.1.1.1
+ ping 1.1.1.1
+PING 1.1.1.1 (1.1.1.1) 56(84) bytes of data.
+64 bytes from 1.1.1.1: icmp_seq=1 ttl=55 time=6.73 ms
+64 bytes from 1.1.1.1: icmp_seq=2 ttl=55 time=6.85 ms
+
+
 j) File Compression:
 a. Compress the "docs" directory into a zip file. 
 b. Extract the contents of the zip file into a new directory. 
