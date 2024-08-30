@@ -78,7 +78,7 @@ cdac@LAPTOP-NGDA72MJ:~/LinuxAssignment$ cd /
 cdac@LAPTOP-NGDA72MJ:/$ ls
 bin  boot  dev  etc  home  init  lib  lib32  lib64  libx32  media  mnt  opt  proc  root  run  sbin  snap  srv  sys  tmp  usr  var
 
-  File Searching:
+g) File Searching:
 a. Search for all files with the extension ".txt" in the current directory and its subdirectories. 
 
 cdac@LAPTOP-NGDA72MJ:~$ ls | grep ".txt"
