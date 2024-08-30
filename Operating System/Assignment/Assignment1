@@ -118,23 +118,136 @@ PING 1.1.1.1 (1.1.1.1) 56(84) bytes of data.
 
 j) File Compression:
 a. Compress the "docs" directory into a zip file. 
+
+cdac@LAPTOP-NGDA72MJ:~/LinuxAssignment$ zip -r docs.zip docs/
+updating: docs/ (stored 0%)
+updating: docs/file2.txt (stored 0%)
+cdac@LAPTOP-NGDA72MJ:~/LinuxAssignment$ ls | grep .zip
+docs.zip
+
 b. Extract the contents of the zip file into a new directory. 
+
+cdac@LAPTOP-NGDA72MJ:~/LinuxAssignment$ mkdir New_docs
+cdac@LAPTOP-NGDA72MJ:~/LinuxAssignment$ unzip docs.zip -d New_docs/
+Archive:  docs.zip
+   creating: New_docs/docs/
+ extracting: New_docs/docs/file2.txt
+
+
 k) File Editing:
 a. Open the "file1.txt" file in a text editor and add some text to it. 
+
+cdac@LAPTOP-NGDA72MJ:~/LinuxAssignment$ cat file1.txt
+Hello
+cdac@LAPTOP-NGDA72MJ:~/LinuxAssignment$ nano file1.txt
+cdac@LAPTOP-NGDA72MJ:~/LinuxAssignment$ cat file1.txt
+Hello
+hii
+
 b. Replace a specific word in the "file1.txt" file with another word (provide the original 
 word and the word to replace it with). 
-Problem 2: Read the instructions carefully and answer accordingly. If there is 
-any need to insert some data then do that as well. 
+
+cdac@LAPTOP-NGDA72MJ:~/LinuxAssignment$ sed -i 's/hii/bye/g' file1.txt
+cdac@LAPTOP-NGDA72MJ:~/LinuxAssignment$ cat file1.txt
+Hello
+bye
+
+
+Problem 2: 
+
 a. Suppose you have a file named "data.txt" containing important information. Display the 
 first 10 lines of this file to quickly glance at its contents using a command. 
+
+cdac@LAPTOP-NGDA72MJ:~/LinuxAssignment$ head -10 data.txt
+Good
+Morning
+everybody
+,
+I
+hope
+you
+Have
+A
+Nice
+
+
 b. Now, to check the end of the file for any recent additions, display the last 5 lines of 
 "data.txt" using another command. 
+
+cdac@LAPTOP-NGDA72MJ:~/LinuxAssignment$ tail -5 data.txt
+Have
+A
+Nice
+Day
+!
+
+
 c. In a file named "numbers.txt," there are a series of numbers. Display the first 15 lines of 
-this file to analyze the initial data set. 
+this file to analyze the initial data set.
+
+cdac@LAPTOP-NGDA72MJ:~/LinuxAssignment$ nano numbers.txt
+cdac@LAPTOP-NGDA72MJ:~/LinuxAssignment$ cat numbers.txt
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+cdac@LAPTOP-NGDA72MJ:~/LinuxAssignment$ head -15 numbers.txt
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+
+
 d. To focus on the last few numbers of the dataset, display the last 3 lines of "numbers.txt". 
+
+cdac@LAPTOP-NGDA72MJ:~/LinuxAssignment$ tail -3 numbers.txt
+18
+19
+20
+
+
 e. Imagine you have a file named "input.txt" with text content. Use a command to translate 
 all lowercase letters to uppercase in "input.txt" and save the modified text in a new file 
 named "output.txt." 
+
+cdac@LAPTOP-NGDA72MJ:~/LinuxAssignment$ nano input.txt
+cdac@LAPTOP-NGDA72MJ:~/LinuxAssignment$ cat input.txt
+good morning
+cdac@LAPTOP-NGDA72MJ:~/LinuxAssignment$ touch output.txt
+cdac@LAPTOP-NGDA72MJ:~/LinuxAssignment$ tr 'a-z' 'A-Z' < input.txt > output.txt
+cdac@LAPTOP-NGDA72MJ:~/LinuxAssignment$ cat output.txt
+GOOD MORNING
+cdac@LAPTOP-NGDA72MJ:~/LinuxAssignment$ cat input.txt
+good morning
+
+
 f. In a file named "duplicate.txt," there are several lines of text, some of which are 
 duplicates. Use a command to display only the unique lines from "duplicate.txt." 
 g. In a file named "fruit.txt," there is a list of fruits, but some fruits are repeated. Use a 
