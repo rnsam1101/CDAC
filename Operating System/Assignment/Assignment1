@@ -50,9 +50,32 @@ e) Permissions and Ownership:
 the owner and only read permissions for others. Then, change the owner of "file2.txt" to 
 the current user. 
 
+cdac@LAPTOP-NGDA72MJ:~/LinuxAssignment/docs$ chmod u+r+w+x file2.txt
+cdac@LAPTOP-NGDA72MJ:~/LinuxAssignment/docs$ ls -l
+total 0
+-rwxr--r-- 1 cdac cdac 6 Aug 30 16:51 file2.txt
+cdac@LAPTOP-NGDA72MJ:~/LinuxAssignment/docs$ chmod o-w-x file2.txt
+cdac@LAPTOP-NGDA72MJ:~/LinuxAssignment/docs$ ls -l
+total 0
+-rwxr--r-- 1 cdac cdac 6 Aug 30 16:51 file2.txt
+cdac@LAPTOP-NGDA72MJ:~/LinuxAssignment/docs$ sudo chown $(whoami) file2.txt
+cdac@LAPTOP-NGDA72MJ:~/LinuxAssignment/docs$ pwd
+/home/cdac/LinuxAssignment/docs
+cdac@LAPTOP-NGDA72MJ:~/LinuxAssignment/docs$ ls
+file2.txt
+
 f) Final Checklist:
-a. Finally, list the contents of the "LinuxAssignment" directory and the root directory to 
+   Finally, list the contents of the "LinuxAssignment" directory and the root directory to 
 ensure that all operations were performed correctly. 
+cdac@LAPTOP-NGDA72MJ:~/LinuxAssignment/docs$ cd -
+/home/cdac/LinuxAssignment
+cdac@LAPTOP-NGDA72MJ:~/LinuxAssignment$ ls -l
+total 0
+drwxr-xr-x 1 cdac cdac 4096 Aug 30 16:52 docs
+-rw-r--r-- 1 cdac cdac    6 Aug 30 16:28 file1.txt
+cdac@LAPTOP-NGDA72MJ:~/LinuxAssignment$ cd /
+cdac@LAPTOP-NGDA72MJ:/$ ls
+bin  boot  dev  etc  home  init  lib  lib32  lib64  libx32  media  mnt  opt  proc  root  run  sbin  snap  srv  sys  tmp  usr  var
 g) File Searching:
 a. Search for all files with the extension ".txt" in the current directory and its subdirectories. 
 b. Display lines containing a specific word in a file (provide a file name and the specific 
