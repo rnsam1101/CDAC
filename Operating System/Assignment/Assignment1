@@ -1,20 +1,55 @@
 Problem 1: 
 
 a) Navigate and List:
-  a. Start by navigating to your home directory and list its contents. Then, move into a 
-  directory named "LinuxAssignment" if it exists; otherwise, create it. 
+   Start by navigating to your home directory and list its contents. Then, move into a 
+  directory named "LinuxAssignment" if it exists; otherwise, create it.
+
+cdac@LAPTOP-NGDA72MJ:~$ pwd
+/home/cdac
+cdac@LAPTOP-NGDA72MJ:~$ ls
+File.txt  Tutorial  abc.txt  xyz.txt
+cdac@LAPTOP-NGDA72MJ:~$ ls | grep LinuxAssignment
+cdac@LAPTOP-NGDA72MJ:~$ mkdir LinuxAssignment
+cdac@LAPTOP-NGDA72MJ:~$ ls
+File.txt  LinuxAssignment  Tutorial  abc.txt  xyz.txt
+cdac@LAPTOP-NGDA72MJ:~$ cd LinuxAssignment
+cdac@LAPTOP-NGDA72MJ:~/LinuxAssignment$
+
   
 b) File Management:
-a. Inside the "LinuxAssignment" directory, create a new file named "file1.txt". Display its 
+   Inside the "LinuxAssignment" directory, create a new file named "file1.txt". Display its 
 contents. 
+
+cdac@LAPTOP-NGDA72MJ:~$ cd LinuxAssignment
+cdac@LAPTOP-NGDA72MJ:~/LinuxAssignment$ nano file1.txt
+cdac@LAPTOP-NGDA72MJ:~/LinuxAssignment$ cat file1.txt
+Hello
+
 c) Directory Management:
-a. Create a new directory named "docs" inside the "LinuxAssignment" directory. 
+   Create a new directory named "docs" inside the "LinuxAssignment" directory. 
+
+cdac@LAPTOP-NGDA72MJ:~/LinuxAssignment$ mkdir docs
+cdac@LAPTOP-NGDA72MJ:~/LinuxAssignment$ ls
+docs  file1.txt
+
+
 d) Copy and Move Files:
-a. Copy the "file1.txt" file into the "docs" directory and rename it to "file2.txt". 
+   Copy the "file1.txt" file into the "docs" directory and rename it to "file2.txt".
+
+cdac@LAPTOP-NGDA72MJ:~/LinuxAssignment$ cp file1.txt docs
+cdac@LAPTOP-NGDA72MJ:~/LinuxAssignment$ cd docs
+cdac@LAPTOP-NGDA72MJ:~/LinuxAssignment/docs$ ls
+file1.txt
+cdac@LAPTOP-NGDA72MJ:~/LinuxAssignment/docs$ mv file1.txt file2.txt
+cdac@LAPTOP-NGDA72MJ:~/LinuxAssignment/docs$ ls
+file2.txt
+
+
 e) Permissions and Ownership:
-a. Change the permissions of "file2.txt" to allow read, write, and execute permissions for 
+   Change the permissions of "file2.txt" to allow read, write, and execute permissions for 
 the owner and only read permissions for others. Then, change the owner of "file2.txt" to 
 the current user. 
+
 f) Final Checklist:
 a. Finally, list the contents of the "LinuxAssignment" directory and the root directory to 
 ensure that all operations were performed correctly. 
