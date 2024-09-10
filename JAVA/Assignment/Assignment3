@@ -1,1 +1,73 @@
 
+1. Loan Amortization Calculator
+Implement a system to calculate and display the monthly payments for a mortgage loan. The system should:
+1.	Accept the principal amount (loan amount), annual interest rate, and loan term (in years) from the user.
+2.	Calculate the monthly payment using the standard mortgage formula:
+o	Monthly Payment Calculation:
+	monthlyPayment = principal * (monthlyInterestRate * (1 + monthlyInterestRate)^(numberOfMonths)) / ((1 + monthlyInterestRate)^(numberOfMonths) - 1)
+	Where monthlyInterestRate = annualInterestRate / 12 / 100 and numberOfMonths = loanTerm * 12
+	Note: Here ^ means power and to find it you can use Math.pow( ) method
+3.	Display the monthly payment and the total amount paid over the life of the loan, in Indian Rupees (₹).
+Define class LoanAmortizationCalculator with methods acceptRecord, calculateMonthlyPayment & printRecord and test the functionality in main method.
+
+
+package org.example1;
+
+import java.util.Scanner;
+
+class LoanDetails {
+	private double principal;
+	private double AnnualinterestRate;
+	private double loanterm;
+	private double  monthlypayment;
+	
+	public double CalMonthlyPayment(){
+		// Correctly calculating monthlyPayment
+				return principal * (monthlyInterestAmt() * Math.pow(1 + monthlyInterestAmt(), NumofMonths()) / (Math.pow(1 + monthlyInterestAmt(), NumofMonths()) - 1));
+
+	}	
+
+	public double  monthlyInterestAmt() {
+		return AnnualinterestRate/12/100; 
+	}
+	public double NumofMonths() {
+		return loanterm * 12;
+	}
+	
+	public LoanDetails() {
+		this.principal = 0 ;
+		this.AnnualinterestRate = 0;
+		this.loanterm = 0;
+		this.monthlypayment = 0;
+	}
+	public void AcceptRecords( ) {
+		Scanner sc =new Scanner(System.in);
+		 System.out.println("Principle: ");
+		 this.principal = sc.nextDouble();
+		 System.out.println("AnnualinterestRate: ");
+		 this.AnnualinterestRate = sc.nextDouble();
+		
+		 System.out.println("loanterm: ");
+		 this.loanterm = sc.nextDouble();
+		 
+		 
+	}
+	public void Showrecords() {
+		this.monthlypayment = CalMonthlyPayment();
+		this.AnnualinterestRate = monthlyInterestAmt();
+			
+		System.out.println("Principle Amount: "+principal);
+		System.out.println("Annual Interest Rate: "+AnnualinterestRate);
+		System.out.println("Loan term: "+loanterm);
+		System.out.println("Payment : " + monthlypayment);
+			}
+}
+
+public  class LoanCalculator {
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		LoanDetails cal = new LoanDetails();
+		cal.AcceptRecords();
+		cal.Showrecords();	
+		}
+}
