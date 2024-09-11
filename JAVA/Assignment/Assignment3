@@ -1,4 +1,3 @@
-
 1. Loan Amortization Calculator
 Implement a system to calculate and display the monthly payments for a mortgage loan. The system should:
 1.	Accept the principal amount (loan amount), annual interest rate, and loan term (in years) from the user.
@@ -22,8 +21,8 @@ class LoanDetails {
 	private double  monthlypayment;
 	
 	public double CalMonthlyPayment(){
-		// Correctly calculating monthlyPayment
-				return principal * (monthlyInterestAmt() * Math.pow(1 + monthlyInterestAmt(), NumofMonths()) / (Math.pow(1 + monthlyInterestAmt(), NumofMonths()) - 1));
+		
+		return principal * (monthlyInterestAmt() * Math.pow(1 + monthlyInterestAmt(), NumofMonths()) / (Math.pow(1 + monthlyInterestAmt(), NumofMonths()) - 1));
 
 	}	
 
@@ -71,14 +70,22 @@ public  class LoanCalculator {
 		cal.Showrecords();	
 		}
 }
+ 
 
 
 
 
-question 2:
 
 
-
+2. Compound Interest Calculator for Investment
+Develop a system to compute the future value of an investment with compound interest. The system should:
+1.	Accept the initial investment amount, annual interest rate, number of times the interest is compounded per year, and investment duration (in years) from the user.
+2.	Calculate the future value of the investment using the formula:
+o	Future Value Calculation:
+	futureValue = principal * (1 + annualInterestRate / numberOfCompounds)^(numberOfCompounds * years)
+o	Total Interest Earned: totalInterest = futureValue - principal
+3.	Display the future value and the total interest earned, in Indian Rupees (₹).
+Define class CompoundInterestCalculator with methods acceptRecord , calculateFutureValue, printRecord and test the functionality in main method.
 package org.example3;
 
 import java.text.NumberFormat;
@@ -135,10 +142,24 @@ public class compound {
 }
 
 
+ 
 
 
-Question 3
 
+
+
+3. BMI (Body Mass Index) Tracker
+Create a system to calculate and classify Body Mass Index (BMI). The system should:
+1.	Accept weight (in kilograms) and height (in meters) from the user.
+2.	Calculate the BMI using the formula:
+o	BMI Calculation: BMI = weight / (height * height)
+3.	Classify the BMI into one of the following categories:
+o	Underweight: BMI < 18.5
+o	Normal weight: 18.5 ≤ BMI < 24.9
+o	Overweight: 25 ≤ BMI < 29.9
+o	Obese: BMI ≥ 30
+4.	Display the BMI value and its classification.
+Define class BMITracker with methods acceptRecord, calculateBMI, classifyBMI & printRecord and test the functionality in main method.
 
 package org.example4;
 import java.util.Scanner;
@@ -164,16 +185,18 @@ class CheckBMI {
 
     public void classifyBMI() {
         System.out.printf("\nYour BMI is: %.2f\n", bmi);
-
-        if (bmi < 18.5) {
-            System.out.println("Classification: Underweight");
-        } else if (bmi >= 18.5 && bmi < 24.9) {
-            System.out.println("Classification: Normal weight");
-        } else if (bmi >= 25 && bmi < 29.9) {
-            System.out.println("Classification: Overweight");
-        } else {
-            System.out.println("Classification: Obese");
-        }
+if(bmi<18.5) {
+			System.out.println(" You are Underweight.");
+		}
+		else if(bmi>=18.5 && bmi<=24.9) {
+			System.out.println("YOu have a normal weight");
+		}
+		else if(bmi>=25 && bmi <=29.9) {
+			System.out.println("You are overweight");
+		}
+		else {
+			System.out.println("You are Obese");
+		}
     }
 }
     public class bmi {
@@ -185,13 +208,24 @@ class CheckBMI {
     	    }
     }
  
+ 
 
+    
+    
+   
+    
 
-    
-    
-   Questin 4
-    
-package org.example5;import java.text.NumberFormat;
+4. Discount Calculation for Retail Sales
+Design a system to calculate the final price of an item after applying a discount. The system should:
+1.	Accept the original price of an item and the discount percentage from the user.
+2.	Calculate the discount amount and the final price using the following formulas:
+o	Discount Amount Calculation: discountAmount = originalPrice * (discountRate / 100)
+o	Final Price Calculation: finalPrice = originalPrice - discountAmount
+3.	Display the discount amount and the final price of the item, in Indian Rupees (₹).
+Define class DiscountCalculator with methods acceptRecord, calculateDiscount & printRecord and test the functionality in main method.
+
+Solution:
+package org.example5;
 
 import java.util.Scanner;
 
@@ -210,7 +244,6 @@ class DiscountCal {
         this.discountRate = sc.nextDouble();
     }
 
-    // Method to calculate the discount and final price
     public void calculateDiscount() {
         this.discountAmount = originalPrice * (discountRate / 100);
         this.finalPrice = originalPrice - discountAmount;
@@ -227,10 +260,28 @@ class DiscountCal {
 
 public class Sales {
 public static void main(String[] args) {
-	  DiscountCal cl = new DiscountCal();
+      DiscountCal cl = new DiscountCal();
       cl.acceptRecord();
       cl.calculateDiscount();
       cl.printRecord();
 }
 }
+ 
+
+
+
+
+
+5. Toll Booth Revenue Management
+Develop a system to simulate a toll booth for collecting revenue. The system should:
+1.	Allow the user to set toll rates for different vehicle types: Car, Truck, and Motorcycle.
+2.	Accept the number of vehicles of each type passing through the toll booth.
+3.	Calculate the total revenue based on the toll rates and number of vehicles.
+4.	Display the total number of vehicles and the total revenue collected, in Indian Rupees (₹).
+•	Toll Rate Examples:
+o	Car: ₹50.00
+o	Truck: ₹100.00
+o	Motorcycle: ₹30.00
+Define class TollBoothRevenueManager with methods acceptRecord, setTollRates, calculateRevenue & printRecord and test the functionality in main method.
+
 
