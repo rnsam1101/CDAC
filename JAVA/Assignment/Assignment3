@@ -134,3 +134,60 @@ public class compound {
 
 }
 
+
+
+
+
+
+
+package org.example4;
+import java.util.Scanner;
+
+class CheckBMI {
+    private double weight;
+    private double height;
+    private double bmi;
+
+    public void acceptRecord() {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter Weight (in kg): ");
+        this.weight = sc.nextDouble();
+
+        System.out.print("Enter Height (in meters): ");
+        this.height = sc.nextDouble();
+    }
+
+
+    public void calculateBMI() {
+        this.bmi = weight / (height * height);
+    }
+
+    public void classifyBMI() {
+        System.out.printf("\nYour BMI is: %.2f\n", bmi);
+
+        if (bmi < 18.5) {
+            System.out.println("Classification: Underweight");
+        } else if (bmi >= 18.5 && bmi < 24.9) {
+            System.out.println("Classification: Normal weight");
+        } else if (bmi >= 25 && bmi < 29.9) {
+            System.out.println("Classification: Overweight");
+        } else {
+            System.out.println("Classification: Obese");
+        }
+    }
+}
+    public class bmi {
+    	public static void main(String[] args) {
+    		 CheckBMI tracker = new CheckBMI();
+    	        tracker.acceptRecord();
+    	        tracker.calculateBMI();
+    	        tracker.classifyBMI();
+    	    }
+    }
+
+
+
+    
+    
+   Questin 3
+    
