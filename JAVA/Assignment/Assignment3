@@ -71,3 +71,66 @@ public  class LoanCalculator {
 		cal.Showrecords();	
 		}
 }
+
+
+
+
+question 2:
+
+
+
+package org.example3;
+
+import java.text.NumberFormat;
+import java.util.Locale;
+import java.util.Scanner;
+
+class compoundInterestCal{
+	    private double principal;
+	    private double annualInterestRate;
+	    private int numberOfCompounds;
+	    private int years;
+	    private double futureValue;
+	    private double totalInterest;
+	    
+	    public void acceptRecord() {
+	        Scanner sc = new Scanner(System.in);
+	        System.out.print("Enter Initial Investment Amount: ");
+	        this.principal = sc.nextDouble();
+
+	        System.out.print("Enter Annual Interest Rate (in %): ");
+	        this.annualInterestRate = sc.nextDouble();
+
+	        System.out.print("Enter Number of Times Interest is Compounded Per Year: ");
+	        this.numberOfCompounds = sc.nextInt();
+
+	        System.out.print("Enter Investment Duration (in years): ");
+	        this.years = sc.nextInt();
+	    }
+	    public void printRecord() {
+	    	this.futureValue = FutureValueCal();
+	    	this.totalInterest = TotalIntCal();
+	    	System.out.println("Initial Investment : " + principal);
+	        System.out.println("Annual Interest Rate: " + annualInterestRate);
+	        System.out.println("Future Value: " +futureValue );
+	        System.out.println("Total Interest Earned: " + totalInterest);
+	    }
+	    public double FutureValueCal() {
+	        this.futureValue = principal * Math.pow(1 + (annualInterestRate / numberOfCompounds / 100), numberOfCompounds * years);
+	        return futureValue;
+	    }
+	    public double TotalIntCal() {
+	        this.totalInterest = futureValue - principal;
+	        return totalInterest;
+	    }
+}
+public class compound {
+	public static void main(String[] args) {
+		compoundInterestCal ci = new compoundInterestCal();
+		ci.acceptRecord();
+		ci.printRecord();
+		
+	}
+
+}
+
