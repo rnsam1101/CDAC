@@ -1,0 +1,90 @@
+1. Implement a Stack using an array.
+•	Test Case 1:
+Input: Push 5, 3, 7, Pop
+Output: Stack = [5, 3], Popped element = 7
+•	Test Case 2:
+Input: Push 10, Push 20, Pop, Push 15
+Output: Stack = [10, 15], Popped element = 
+
+Flowchart
+1.Start
+2.Initialize Stack
+Create an array 
+Initialize top = -1 (empty stack.)
+3.Push Operation
+Input
+Check if top == ArraySize - 1 (Stack is full):
+ Stack Overflow
+Else  top++ and stack[top]== add element
+4.Pop Operation
+Check if top == -1 (Stack is empty):
+ Stack Underflow
+Else Return stack[top] and top--.
+5.Print Stack
+Check if top == -1 (Stack is empty):
+Stack is empty
+Print elements from stack[0] to stack[top].
+5.Stop
+class Stack {
+    static final int MAX = 10;
+    int top;
+    int a[] = new int[MAX];
+    
+    Stack() {
+        top = -1;
+    }
+
+    boolean isEmpty() {
+        return (top < 0);
+    }
+
+    boolean push(int x) {
+        if (top >= (MAX - 1)) {
+            System.out.println("Stack Overflow");
+            return false;
+        }
+        a[++top] = x;
+        return true;
+    }
+
+    int pop() {
+        if (top < 0) {
+            System.out.println("Stack underflow");
+            return 0;
+        }
+        return a[top--];
+    }
+
+    int peek() {
+        return (top < 0) ? -1 : a[top];
+    }
+
+    void display() {
+        if (isEmpty()) {
+            System.out.println("Empty stack!");
+        } else {
+            System.out.println("Stack elements are:");
+            show(top);
+            System.out.println();
+        }
+    }
+
+    void show(int index) {
+        if (index < 0) return;
+        System.out.println(a[index] + "");
+        show(index - 1);
+    }
+
+    public static void main(String args[]) {
+        Stack s1 = new Stack();
+        s1.push(5);
+        s1.push(3);
+        s1.push(7);
+
+        s1.display();
+
+        s1.pop();
+        s1.display();
+    }
+}
+
