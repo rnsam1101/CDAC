@@ -1,0 +1,148 @@
+                                                 Assignment No- 5 
+
+
+1)	Create a base class BankAccount with methods like deposit() and withdraw(). Derive a class SavingsAccount that overrides the withdraw() method to impose a limit on the withdrawal amount. Write a program that demonstrates the use of overridden methods and proper access modifiers & return the details.
+class BankAccount {
+    protected double balance;
+
+    public BankAccount(double balance) {
+        this.balance = balance;
+    }
+
+    public void deposit(double amount) {
+        if (amount > 0) {
+            balance += amount;
+            System.out.println("Deposited: " + amount);
+        }
+    }
+
+    public boolean withdraw(double amount) {
+        if (amount <= balance) {
+            balance -= amount;
+            System.out.println("Withdrawn: " + amount);
+            return true;
+        } else {
+            System.out.println("Insufficient balance.");
+            return false;
+        }
+    }
+
+    public double getBalance() {
+        return balance;
+    }
+}
+
+class SavingsAccount extends BankAccount {
+    private final double withdrawalLimit = 500;
+
+    public SavingsAccount(double balance) {
+        super(balance);
+    }
+
+    @Override
+    public boolean withdraw(double amount) {
+        if (amount > withdrawalLimit) {
+            System.out.println("Withdrawal limit exceeded. Max limit: " + withdrawalLimit);
+            return false;
+        } else {
+            return super.withdraw(amount);
+        }
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        BankAccount basicAccount = new BankAccount(1000);
+        SavingsAccount savingsAccount = new SavingsAccount(1500);
+
+        System.out.println("Basic Account:");
+        basicAccount.deposit(500);
+        basicAccount.withdraw(300);
+        System.out.println("Current balance: " + basicAccount.getBalance());
+
+        System.out.println("\nSavings Account:");
+        savingsAccount.deposit(200);
+        savingsAccount.withdraw(600); // Exceeds limit
+        savingsAccount.withdraw(400); // Within limit
+        System.out.println("Current balance: " + savingsAccount.getBalance());
+    }
+}
+
+2)	Create a base class Vehicle with attributes like make and year. Provide a constructor in Vehicle to initialize these attributes. Derive a class Car that has an additional attribute model and write a constructor that initializes make, year, and model. Write a program to create a Car object and display its details.
+
+class Vehicle {
+    String make;
+    int year;
+
+    public Vehicle(String make, int year) {
+        this.make = make;
+        this.year = year;
+    }
+}
+
+class Car extends Vehicle {
+    String model;
+
+    public Car(String make, int year, String model) {
+        super(make, year);
+        this.model = model;
+    }
+
+    public void displayDetails() {
+        System.out.println("Make: " + make + ", Year: " + year + ", Model: " + model);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Car car = new Car("Toyota", 2020, "Corolla");
+        car.displayDetails();
+    }
+}
+
+3)	Create a base class Animal with attributes like name, and methods like eat() and sleep(). Create a subclass Dog that inherits from Animal and has an additional method bark(). Write a program to demonstrate the use of inheritance by creating objects of Animal and Dog and calling their methods.
+
+class Animal {
+    String name;
+
+    public Animal(String name) {
+        this.name = name;
+    }
+
+    public void eat() {
+        System.out.println(name + " is eating.");
+    }
+
+    public void sleep() {
+        System.out.println(name + " is sleeping.");
+    }
+}
+
+class Dog extends Animal {
+    public Dog(String name) {
+        super(name);
+    }
+
+    public void bark() {
+        System.out.println(name + " is barking.");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Animal animal = new Animal("Generic Animal");
+        animal.eat();
+        animal.sleep();
+
+        Dog dog = new Dog("Buddy");
+        dog.eat();
+        dog.sleep();
+        dog.bark();
+    }
+}
+
+4)	Build a class Student which contains details about the Student and compile and run its
+instance.
+
+5)	Write a Java program to create a base class Vehicle with methods startEngine() and stopEngine(). Create two subclasses Car and Motorcycle. Override the startEngine() and stopEngine() methods in each subclass to start and stop the engines differently.
+
