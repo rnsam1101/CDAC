@@ -1,0 +1,13 @@
+Assignment –3
+
+Overview of SQL.
+
+1) Does ANSI recognize the data type DATE?
+    Yes. 
+    ANSI (American National Standards Institute) recognizes the Data type DATE.
+    Date ('YYYY-MM-DD' is the default date format).
+
+
+2) Which subdivision of SQL is used to insert values in tables?
+    The sub division of SQL is Data Manupulation Language
+    Insert statement is used to add new rows and values into tables.
