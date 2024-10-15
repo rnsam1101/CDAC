@@ -6,8 +6,16 @@ Overview of SQL.
     Yes. 
     ANSI (American National Standards Institute) recognizes the Data type DATE.
     Date ('YYYY-MM-DD' is the default date format).
+    eg.
+   insert into  Employees ( hire_date)
+    values ('2024-10-16');
+
 
 
 2) Which subdivision of SQL is used to insert values in tables?
     The sub division of SQL is Data Manupulation Language
     Insert statement is used to add new rows and values into tables.
+    eg.
+    insert into Employees (empid, ename)
+    values (001, 'A'');
+
