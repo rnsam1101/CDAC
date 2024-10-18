@@ -1,0 +1,45 @@
+Assignment –7
+Summarizing Data with Aggregate Functions.
+
+1) Write a query that counts all orders for October 3.
+
+where Odate='1990-10-03'' at line 1
+mysql> select count(*)  As Ocount from Orders
+    -> where Odate='1990-10-03';
++--------+
+| Ocount |
++--------+
+|     15 |
++--------+
+
+2) Write a query that counts the number of different non-NULL city values in the Customers table.
+  mysql> select count(*)  As Ocount from Customers
+    -> where City IS NOT NULL;
++--------+
+| Ocount |
++--------+
+|      7 |
++--------+
+
+
+3) Write a query that selects each customer’s smallest order.
+mysql> select Distinct Cnum, min(Amt) from Orders
+    -> Group by Cnum;
++------+----------+
+| Cnum | min(Amt) |
++------+----------+
+| 2008 |    18.69 |
+| 2007 |  1900.10 |
+| 2001 |   767.19 |
+| 2003 |  5160.45 |
+| 2004 |    75.75 |
+| 2006 |  4723.00 |
+| 2002 |  1713.23 |
++------+----------+
+
+4) Write a query that selects the first customer, in alphabetical order, whose name 
+begins with G.
+5) Write a query that selects the highest rating in each city.
+6) Write a query that counts the number of salespeople registering orders for each 
+day. (If a salesperson has more than one order on a given day, he or she should be 
+counted only once.).
