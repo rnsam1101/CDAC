@@ -64,3 +64,11 @@ mysql> select *  from Customers
  
  Select snum, sname, city, comm From Salespeople 
 where (comm > .12 OR comm <.14); 
+
+Select snum, sname, city, comm From Salespeople
+    -> where comm between 0.12 and 0.140;
++------+--------+----------+------+
+| snum | sname  | city     | comm |
++------+--------+----------+------+
+| 1002 | Serres | San Jose | 0.13 |
++------+--------+----------+------+
