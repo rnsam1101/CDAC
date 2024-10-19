@@ -39,7 +39,39 @@ mysql> select Distinct Cnum, min(Amt) from Orders
 
 4) Write a query that selects the first customer, in alphabetical order, whose name 
 begins with G.
+
+mysql> select min(cname)
+    -> from customers
+    -> where cname like 'G%';
++------------+
+| min(cname) |
++------------+
+| Giovanni   |
++------------+
+
 5) Write a query that selects the highest rating in each city.
+mysql> select city, max(rating) from Customers
+    -> group by city;
++----------+-------------+
+| city     | max(rating) |
++----------+-------------+
+| London   |         100 |
+| Rome     |         200 |
+| San Jose |         300 |
+| Berlin   |         300 |
++----------+-------------+
+
+
 6) Write a query that counts the number of salespeople registering orders for each 
 day. (If a salesperson has more than one order on a given day, he or she should be 
 counted only once.).
+mysql> SELECT odate, COUNT(DISTINCT snum) AS scount FROM Orders
+    ->  GROUP BY odate;
++------------+--------+
+| odate      | scount |
++------------+--------+
+| 1990-10-03 |      4 |
+| 1990-10-04 |      2 |
+| 1990-10-05 |      1 |
+| 1990-10-06 |      2 |
++------------+--------+
