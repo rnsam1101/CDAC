@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Quicksand:wght@300..700&family=Raleway:wght@200;400&display=swap" rel="stylesheet">
+   <style>
+      *{
+         font-family: 'Quicksand';
+      }
+      body{
+         background: linear-gradient(rgb(230, 229, 233), rgb(47, 47, 75) );
+      }
+      #container {
+    display: flex;
+    width: 80%;
+    height: 500px;
+    text-align: center;
+    margin: 80px auto;
+    background-color: white; 
+    border-radius: 50px; 
+    border: 2px solid black;
+    overflow: hidden;
+}
+
+#left, #right {
+    width: 50%;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+   
+}
+
+#right {
+    background-color: rgb(208, 181, 233); 
+}
+      }
+      #heading{
+         padding-top: 20px;
+      }
+      input{
+         width: 70%;
+         margin-bottom: 25px;
+         padding-top: 15px;
+         padding-bottom: 15px;
+      }
+      button{
+         width: 35%;
+         padding-top: 10px;
+         padding-bottom: 10px;
+         background: white;
+         color: black;
+         border-color:rgb(2, 2, 2);
+         border-width: 1px;
+         border-style: solid;
+         cursor: pointer;
+         transition: background 0.4s;
+      }
+      button:hover{
+         background: rgb(156, 154, 223);
+         color: rgb(192, 230, 240);
+      }
+      a:hover{
+        color: blue;
+        text-decoration: none;  
+      }
+
+   </style>
+</head>
+<body>
+   <div id="container">
+       <div id="left">
+      <h1 id="heading">Sign In</h1>
+      <form>
+         <input type="tet" placeholder="username">
+
+         <input type="password" placeholder="Password">
+         <p> <a href="#">Forgot your password?</a></p>
+         <button type="submit">Sign In</button>
+      </form>
+    </div>
+      <div id="right">
+        <h1 id="heading">Create Account</h1>
+      <form>
+         <p> Sign Up if You don't have any account?</p>
+         <button type="submit">Sign up</button>
+      </form>
+      </div>
+   </div>
+</body>
+</html>
